@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2>Panel Admin</h2>
+    <div><a href="index.html">Ver tienda</a> <button id="btnSalir" class="oculto" onclick="salir()">Salir</button></div>
+  </header>
+
+  <!-- LOGIN -->
+  <div id="login" class="caja">
+    <h3>Iniciar sesión</h3>
+    <input id="usuario" placeholder="Usuario">
+    <input id="clave" type="password" placeholder="Contraseña">
+    <button onclick="entrar()">Entrar</button>
+    <p id="error" class="agotado"></p>
+  </div>
+
+  <!-- PANEL -->
+  <main id="panel" class="oculto">
+    <div class="caja" style="max-width:none; margin:10px 0;">
+      <h3 id="titulo">Agregar producto</h3>
+      <input type="hidden" id="idEditar">
+      <input id="nombre" placeholder="Nombre">
+      <input id="precio" type="number" placeholder="Precio">
+      <input id="stock" type="number" placeholder="Stock">
+      <input id="categoria" placeholder="Categoría">
+      <input id="imagen" placeholder="URL de la imagen">
+      <button onclick="guardar()">Guardar</button>
+      <button class="rojo" onclick="limpiar()">Cancelar</button>
+    </div>
+    <table>
+      <thead><tr><th>Nombre</th><th>Precio</th><th>Stock</th><th>Categoría</th><th>Acciones</th></tr></thead>
+      <tbody id="tabla"></tbody>
+    </table>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

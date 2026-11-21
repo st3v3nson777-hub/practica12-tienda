@@ -1,6 +1,5 @@
 let productos = [];
 
-// Busca el id aunque MockAPI lo llame distinto
 function sacarId(p) {
   return p.id ?? p.ID ?? p.Id ?? p._id ?? p.productoId ?? p.productId;
 }
@@ -49,7 +48,6 @@ function mostrar() {
   });
 }
 
-// Recibe la posición del producto en la lista
 async function comprar(i) {
   const msg = document.getElementById("mensaje");
   const p = productos[i];
